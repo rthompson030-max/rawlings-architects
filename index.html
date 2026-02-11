@@ -1,197 +1,149 @@
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PETER RAWLINGS ARCHITECTS | Heritage & Conservation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-<style>
-:root {
---c-bg: #E3E1DC; 
---c-dark: #121212;
---c-accent: #374336; 
---font-display: 'Syncopate', sans-serif;
---font-body: 'Manrope', sans-serif;
-}
-body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--font-body); margin: 0; overflow-x: hidden; opacity: 0; }
-.wrapper { position: relative; z-index: 10; background-color: var(--c-bg); margin-bottom: 100vh; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
-.word-wrap { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; }
-.word-inner { display: inline-block; transform: translateY(110%); }
-.loader { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; color: #fff; }
-.loader-text { font-family: var(--font-display); font-size: 5vw; font-weight: 700; }
-.loader-bar { position: absolute; bottom: 0; left: 0; height: 4px; background: #fff; width: 0%; }
-.stack-section { padding: 10vh 0; background: var(--c-dark); color: #E3E1DC; position: relative; }
-.stack-container { width: 100%; max-width: 1400px; margin: 0 auto; position: relative; padding-bottom: 10vh; }
-.card-item { position: sticky; top: 12vh; height: 75vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15vh; }
-.card-inner { width: 95%; height: 100%; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; }
-.card-content { padding: 4rem; display: flex; flex-direction: column; justify-content: space-between; background: #1a1a1a; z-index: 2; }
-.card-img-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; background: #222; }
-.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 2s ease; }
-.footer-sticky { position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; z-index: 1; background: #000; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.display { font-family: var(--font-display); }
-</style></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETER RAWLINGS ARCHITECTS | Heritage & Conservation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <style>
+        :root { --c-bg: #E3E1DC; --c-dark: #121212; --c-accent: #374336; --font-display: 'Syncopate', sans-serif; }
+        body { background-color: var(--c-bg); color: var(--c-dark); font-family: 'Manrope', sans-serif; margin: 0; overflow-x: hidden; opacity: 0; }
+        .wrapper { position: relative; z-index: 10; background-color: var(--c-bg); margin-bottom: 100vh; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
+        .loader { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; color: #fff; }
+        .loader-text { font-family: var(--font-display); font-size: 5vw; font-weight: 700; }
+        .loader-bar { position: absolute; bottom: 0; left: 0; height: 4px; background: #fff; width: 0%; }
+        .stack-section { padding: 10vh 0; background: var(--c-dark); color: #E3E1DC; position: relative; }
+        .card-item { position: sticky; top: 12vh; height: 75vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15vh; }
+        .card-inner { width: 95%; height: 100%; background: #1a1a1a; display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+        .card-content { padding: 4rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; }
+        .footer-sticky { position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; z-index: 1; background: #000; color: #fff; display: flex; justify-content: center; align-items: center; }
+        .display { font-family: var(--font-display); }
+    </style>
+</head>
 <body>
 
     <div class="loader">
-        <div class="loader-text uppercase text-center">RAWLINGS</div>
+        <div class="loader-text uppercase">RAWLINGS</div>
         <div class="loader-bar"></div>
     </div>
 
-    <nav class="fixed top-0 w-full p-6 md:p-8 flex justify-between items-center z-50 text-black">
-        <a href="#hero" class="display font-bold text-xl tracking-tighter hover:opacity-50 transition-opacity">PETER RAWLINGS</a>
+    <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 text-white mix-blend-difference">
+        <a href="#hero" class="display font-bold text-xl tracking-tighter">PETER RAWLINGS</a>
         <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest font-bold">
-            <a href="#work" class="hover:text-[var(--c-accent)] transition-colors">Portfolio</a>
-            <a href="#studio" class="hover:text-[var(--c-accent)] transition-colors">Studio</a>
-            <a href="#contact" class="hover:text-[var(--c-accent)] transition-colors">Contact</a>
+            <a href="#work" class="hover:opacity-50 transition-opacity">Portfolio</a>
+            <a href="#studio" class="hover:opacity-50 transition-opacity">Studio</a>
+            <a href="#contact" class="hover:opacity-50 transition-opacity">Contact</a>
         </div>
     </nav>
 
     <div class="wrapper">
         <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
-            <img src="https://cbgc.com/wp-content/uploads/2017/04/Chancel-clean-300113-MP-scaled.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.7] hero-img" alt="Chancel Restoration">
+            <img src="https://cbgc.com/wp-content/uploads/2017/04/Chancel-clean-300113-MP-scaled.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.6]" alt="Chancel Restoration">
             <div class="relative z-10 text-center text-white">
-                <h1 class="display text-[8vw] leading-none hero-text overflow-hidden">
-                    <span class="block translate-y-full">PETER</span>
+                <h1 class="display text-[8vw] leading-none overflow-hidden">
+                    <span class="block hero-text">PETER</span>
+                    <span class="block hero-text">RAWLINGS</span>
                 </h1>
-                <h1 class="display text-[8vw] leading-none hero-text overflow-hidden">
-                    <span class="block translate-y-full">RAWLINGS</span>
-                </h1>
-                <p class="mt-8 text-sm uppercase tracking-[0.5em] opacity-0 hero-fade font-bold">Chartered RIBA Architects</p>
+                <p class="mt-8 text-sm uppercase tracking-[0.5em] font-bold opacity-0 hero-fade">Chartered RIBA Architects</p>
             </div>
         </section>
 
-        <section id="studio" class="py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1800px] mx-auto bg-[var(--c-bg)]">
-            <div>
-                <h2 class="display text-4xl md:text-5xl leading-tight split-animate">
-                    Preserving <br><span class="text-[var(--c-accent)]">Legacy.</span>
-                </h2>
-            </div>
-            <div class="text-xl font-light leading-relaxed text-gray-700">
-                <p class="mb-8 split-animate">Working at the intersection of history and innovation. We provide specialized architectural services for Grade I and II listed buildings across the UK.</p>
-                <div class="h-px w-full bg-black/10 my-8"></div>
-                <div class="flex gap-12 text-sm uppercase tracking-widest">
-                    <a href="#hero" class="hover:text-[var(--c-accent)] transition-colors font-bold">Peter Rawlings</a>
-                    <div class="font-bold">Cambridge / London</div>
-                </div>
+        <section id="studio" class="py-32 px-10 md:px-20 bg-[var(--c-bg)]">
+            <div class="max-w-4xl">
+                <h2 class="display text-5xl mb-12">Preserving <span class="text-[var(--c-accent)]">Legacy.</span></h2>
+                <p class="text-2xl leading-relaxed text-gray-700">Specialized architectural services for Grade I and II listed buildings. We blend historic conservation with contemporary vision.</p>
             </div>
         </section>
 
         <section id="work" class="stack-section">
-            <div class="text-center mb-24 px-6">
-                <div class="text-xs uppercase tracking-widest mb-4 opacity-50">Studio Portfolio</div>
-                <h2 class="display text-5xl md:text-7xl">SELECTED WORK</h2>
-            </div>
-
-            <div class="stack-container">
+            <div class="max-w-[1400px] mx-auto">
                 <div class="card-item">
                     <div class="card-inner">
                         <div class="card-content">
-                            <div>
-                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">01</div>
-                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Heritage Stone</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Structural Conservation</p>
-                            </div>
-                            <div class="text-gray-400 font-light italic">Restoring historic masonry to ensure structural longevity.</div>
-                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
+                            <h3 class="text-4xl font-bold uppercase display">Heritage Stone</h3>
+                            <p class="text-sm opacity-60">Stonework & Restoration</p>
+                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
                         </div>
-                        <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1590076215667-875d45469956?q=80&w=1600" class="card-img" alt="Heritage Stone">
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1548678967-f1fc5d760619?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Stone Archway">
                     </div>
                 </div>
 
                 <div class="card-item">
                     <div class="card-inner">
                         <div class="card-content">
-                            <div>
-                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">02</div>
-                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Sacred Spaces</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Oxford & Cambridge</p>
-                            </div>
-                            <div class="text-gray-400 font-light italic">Timber conservation for 15th-century university chapels.</div>
-                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
+                            <h3 class="text-4xl font-bold uppercase display">Sacred Spaces</h3>
+                            <p class="text-sm opacity-60">Church & Cathedral Conservation</p>
+                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
                         </div>
-                        <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1519708465437-ff99c72447e0?q=80&w=1600" class="card-img" alt="Cathedral Interior">
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1515701100741-9457866763ad?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Cathedral Interior">
                     </div>
                 </div>
 
                 <div class="card-item">
                     <div class="card-inner">
                         <div class="card-content">
-                            <div>
-                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">03</div>
-                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Modern Context</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">London Studio</p>
-                            </div>
-                            <div class="text-gray-400 font-light italic">Designing for the future within a historic urban fabric.</div>
-                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
+                            <h3 class="text-4xl font-bold uppercase display">Modern Context</h3>
+                            <p class="text-sm opacity-60">Contemporary Urban Design</p>
+                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
                         </div>
-                        <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1449154117394-0a0659973546?q=80&w=1600" class="card-img" alt="London Architecture">
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Modern Architecture">
                     </div>
                 </div>
             </div>
         </section>
-    </div> 
+    </div>
 
     <footer id="contact" class="footer-sticky">
-        <div class="relative z-10 text-center px-6">
-            <div class="text-xs uppercase tracking-[0.3em] mb-4 text-gray-400">Inquire with the Studio</div>
+        <div class="text-center px-6">
             <a href="mailto:info@peterrawlingsarchitects.co.uk" class="display text-[8vw] leading-none hover:text-gray-400 transition-colors">
                 LET'S TALK
             </a>
-            <div class="mt-20 text-[10px] text-gray-600 uppercase tracking-widest">
+            <div class="mt-16 text-[10px] text-gray-500 uppercase tracking-widest">
                 © 2026 PETER RAWLINGS ARCHITECTS
             </div>
         </div>
-        <img src="https://cbgc.com/wp-content/uploads/2017/04/Chancel-clean-300113-MP-scaled.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
     </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis({ duration: 1.2, smooth: true });
+        
+        // SMOOTH SCROLLING
+        const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
 
-        function splitTextToWords(element) {
-            const text = element.innerText;
-            const words = text.split(' ');
-            element.innerHTML = '';
-            words.forEach(word => {
-                const wordWrap = document.createElement('span');
-                wordWrap.classList.add('word-wrap');
-                wordWrap.innerHTML = `<span class="word-inner">${word}&nbsp;</span>`;
-                element.appendChild(wordWrap);
-            });
-        }
-        document.querySelectorAll('.split-animate').forEach(el => splitTextToWords(el));
-
-        const loadTl = gsap.timeline({ onComplete: () => { document.body.style.opacity = 1; initSite(); } });
-        loadTl.to('.loader-bar', { width: '100%', duration: 1.2, ease: 'power2.inOut' })
+        // PAGE LOADER
+        const loadTl = gsap.timeline({ onComplete: () => { document.body.style.opacity = 1; initAnimations(); } });
+        loadTl.to('.loader-bar', { width: '100%', duration: 1.5, ease: 'power2.inOut' })
               .to('.loader', { yPercent: -100, duration: 0.8, ease: 'power4.inOut' });
 
-        function initSite() {
-            gsap.to('.hero-text span', { y: 0, stagger: 0.1, duration: 1, ease: 'power4.out' });
+        function initAnimations() {
+            gsap.from('.hero-text', { yPercent: 100, stagger: 0.2, duration: 1, ease: 'power4.out' });
             gsap.to('.hero-fade', { opacity: 1, duration: 1, delay: 0.5 });
             
-            document.querySelectorAll('.split-animate').forEach(el => {
-                const words = el.querySelectorAll('.word-inner');
-                gsap.to(words, { y: "0%", duration: 1, scrollTrigger: { trigger: el, start: "top 85%" } });
-            });
-
-            const cards = gsap.utils.toArray('.card-item');
-            cards.forEach((card, i) => {
+            // CARD STACKING EFFECT
+            gsap.utils.toArray('.card-item').forEach((card, i, arr) => {
                 const inner = card.querySelector('.card-inner');
-                const nextCard = cards[i+1];
-                if (nextCard) {
-                    gsap.to(inner, { scale: 0.9, opacity: 0.4, scrollTrigger: { trigger: nextCard, start: "top bottom", end: "top 10vh", scrub: true } });
+                if (arr[i+1]) {
+                    gsap.to(inner, {
+                        scale: 0.9,
+                        opacity: 0.3,
+                        scrollTrigger: {
+                            trigger: arr[i+1],
+                            start: "top bottom",
+                            end: "top 10%",
+                            scrub: true
+                        }
+                    });
                 }
             });
         }
     </script>
-</body></html>
+</body>
+</html>
