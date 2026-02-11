@@ -27,7 +27,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 .card-item { position: sticky; top: 12vh; height: 75vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15vh; }
 .card-inner { width: 95%; height: 100%; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; }
 .card-content { padding: 4rem; display: flex; flex-direction: column; justify-content: space-between; background: #1a1a1a; z-index: 2; }
-.card-img-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.card-img-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; background: #222; }
 .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 2s ease; }
 .footer-sticky { position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; z-index: 1; background: #000; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .display { font-family: var(--font-display); }
@@ -50,7 +50,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 
     <div class="wrapper">
         <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
-            <img src="http://www.peterrawlingsarchitects.co.uk/wp-content/uploads/2017/08/university20church20web200.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.7] hero-img" alt="University Church Restoration">
+            <img src="https://rthompson030-max.github.io/rawlings-architects/image_b5c9da.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.75] hero-img" alt="University Church Restoration">
             <div class="relative z-10 text-center text-white mix-blend-difference">
                 <h1 class="display text-[8vw] leading-none hero-text overflow-hidden">
                     <span class="block translate-y-full">PETER</span>
@@ -72,7 +72,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                 <p class="mb-8 split-animate">Working at the intersection of history and innovation. We provide specialized architectural services for Grade I and II listed buildings across the UK.</p>
                 <div class="h-px w-full bg-black/10 my-8"></div>
                 <div class="flex gap-12 text-sm uppercase tracking-widest">
-                    <div>RIBA Chartered</div>
+                    <a href="#hero" class="hover:text-[var(--c-accent)] transition-colors">Peter Rawlings</a>
                     <div>Cambridge / London</div>
                 </div>
             </div>
@@ -91,13 +91,13 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                             <div>
                                 <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">01</div>
                                 <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">University Church</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Cambridge</p>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Heritage Restoration</p>
                             </div>
-                            <div class="text-gray-400 font-light italic">Detailed structural conservation and interior restoration.</div>
+                            <div class="text-gray-400 font-light italic">Detailed structural conservation and interior stone restoration.</div>
                             <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
                         </div>
                         <div class="card-img-wrap">
-                            <img src="http://www.peterrawlingsarchitects.co.uk/wp-content/uploads/2017/08/university20church20web200.jpg" class="card-img" alt="University Church">
+                            <img src="https://rthompson030-max.github.io/rawlings-architects/image_b6329b.jpg" class="card-img" alt="University Church">
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                             <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
                         </div>
                         <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a04?q=80&w=1600" class="card-img" alt="Historic Chapel">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a04?q=80&w=1600" class="card-img" alt="Gothic Interior">
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,14 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                         <div class="card-content">
                             <div>
                                 <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">03</div>
-                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">The Gilded Studio</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">London Heritage</p>
+                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Modern Heritage</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">London Studio</p>
                             </div>
                             <div class="text-gray-400 font-light italic">Bridging classical aesthetics with modern functionality.</div>
                             <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
                         </div>
                         <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600" class="card-img" alt="Modern Intervention">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600" class="card-img" alt="Modern Architecture">
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                 © 2026 PETER RAWLINGS ARCHITECTS
             </div>
         </div>
-        <img src="http://www.peterrawlingsarchitects.co.uk/wp-content/uploads/2017/08/university20church20web200.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
+        <img src="https://rthompson030-max.github.io/rawlings-architects/image_b5c9da.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
     </footer>
 
     <script>
