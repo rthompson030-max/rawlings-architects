@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PETER RAWLINGS ARCHITECTS | Heritage & Conservation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>PETER RAWLINGS ARCHITECTS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <style>
-        :root { --c-bg: #E3E1DC; --c-dark: #121212; --c-accent: #374336; --font-display: 'Syncopate', sans-serif; }
-        body { background-color: var(--c-bg); color: var(--c-dark); font-family: 'Manrope', sans-serif; margin: 0; overflow-x: hidden; opacity: 0; }
-        .wrapper { position: relative; z-index: 10; background-color: var(--c-bg); margin-bottom: 100vh; box-shadow: 0 50px 100px rgba(0,0,0,0.5); }
-        .loader { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; color: #fff; }
-        .loader-text { font-family: var(--font-display); font-size: 5vw; font-weight: 700; }
-        .loader-bar { position: absolute; bottom: 0; left: 0; height: 4px; background: #fff; width: 0%; }
-        .stack-section { padding: 10vh 0; background: var(--c-dark); color: #E3E1DC; position: relative; }
+        :root { --c-bg: #E3E1DC; --c-dark: #121212; --font-display: 'Syncopate', sans-serif; }
+        body { background-color: var(--c-bg); color: var(--c-dark); font-family: 'Manrope', sans-serif; margin: 0; opacity: 0; }
+        .wrapper { position: relative; z-index: 10; background-color: var(--c-bg); margin-bottom: 100vh; }
+        .stack-section { padding: 10vh 0; background: var(--c-dark); color: #E3E1DC; }
         .card-item { position: sticky; top: 12vh; height: 75vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15vh; }
-        .card-inner { width: 95%; height: 100%; background: #1a1a1a; display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+        .card-inner { width: 95%; height: 100%; background: #1a1a1a; display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; }
         .card-content { padding: 4rem; display: flex; flex-direction: column; justify-content: space-between; }
         .card-img { width: 100%; height: 100%; object-fit: cover; }
         .footer-sticky { position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; z-index: 1; background: #000; color: #fff; display: flex; justify-content: center; align-items: center; }
@@ -27,123 +22,72 @@
     </style>
 </head>
 <body>
-
-    <div class="loader">
-        <div class="loader-text uppercase">RAWLINGS</div>
-        <div class="loader-bar"></div>
-    </div>
-
     <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 text-white mix-blend-difference">
-        <a href="#hero" class="display font-bold text-xl tracking-tighter">PETER RAWLINGS</a>
+        <a href="#hero" class="display font-bold text-xl">PETER RAWLINGS</a>
         <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest font-bold">
-            <a href="#work" class="hover:opacity-50 transition-opacity">Portfolio</a>
-            <a href="#studio" class="hover:opacity-50 transition-opacity">Studio</a>
-            <a href="#contact" class="hover:opacity-50 transition-opacity">Contact</a>
+            <a href="#work">Portfolio</a><a href="#studio">Studio</a><a href="#contact">Contact</a>
         </div>
     </nav>
 
     <div class="wrapper">
         <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
-            <img src="https://cbgc.com/wp-content/uploads/2017/04/Chancel-clean-300113-MP-scaled.jpg" class="absolute inset-0 w-full h-full object-cover brightness-[0.6]" alt="Chancel Restoration">
+            <img src="https://images.unsplash.com/photo-1515701100741-9457866763ad?q=80&w=2000&auto=format" class="absolute inset-0 w-full h-full object-cover brightness-[0.6]">
             <div class="relative z-10 text-center text-white">
-                <h1 class="display text-[8vw] leading-none overflow-hidden">
-                    <span class="block hero-text">PETER</span>
-                    <span class="block hero-text">RAWLINGS</span>
-                </h1>
-                <p class="mt-8 text-sm uppercase tracking-[0.5em] font-bold opacity-0 hero-fade">Chartered RIBA Architects</p>
+                <h1 class="display text-[8vw] leading-none">PETER<br>RAWLINGS</h1>
+                <p class="mt-8 text-sm uppercase tracking-[0.5em] font-bold">Chartered RIBA Architects</p>
             </div>
         </section>
 
-        <section id="studio" class="py-32 px-10 md:px-20 bg-[var(--c-bg)]">
-            <div class="max-w-4xl">
-                <h2 class="display text-5xl mb-12">Preserving <span class="text-[var(--c-accent)]">Legacy.</span></h2>
-                <p class="text-2xl leading-relaxed text-gray-700">Specialized architectural services for Grade I and II listed buildings. We blend historic conservation with contemporary vision.</p>
-            </div>
+        <section id="studio" class="py-32 px-20">
+            <h2 class="display text-5xl mb-8">Preserving Legacy.</h2>
+            <p class="text-xl max-w-2xl">Specialized architectural services for Grade I and II listed buildings.</p>
         </section>
 
         <section id="work" class="stack-section">
-            <div class="max-w-[1400px] mx-auto">
-                <div class="card-item">
-                    <div class="card-inner">
-                        <div class="card-content">
-                            <h3 class="text-4xl font-bold uppercase display">Heritage Stone</h3>
-                            <p class="text-sm opacity-60">Stonework & Restoration</p>
-                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1548678967-f1fc5d760619?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Stone Archway">
-                    </div>
+            <div class="card-item"><div class="card-inner">
+                <div class="card-content">
+                    <h3 class="display text-3xl font-bold">HERITAGE STONE</h3>
+                    <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
                 </div>
+                <img src="https://images.unsplash.com/photo-1548678967-f1fc5d760619?q=80&w=1200&auto=format" class="card-img" alt="Project 1">
+            </div></div>
+            
+            <div class="card-item"><div class="card-inner">
+                <div class="card-content">
+                    <h3 class="display text-3xl font-bold">SACRED SPACES</h3>
+                    <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1590076215667-875d45469956?q=80&w=1200&auto=format" class="card-img" alt="Project 2">
+            </div></div>
 
-                <div class="card-item">
-                    <div class="card-inner">
-                        <div class="card-content">
-                            <h3 class="text-4xl font-bold uppercase display">Sacred Spaces</h3>
-                            <p class="text-sm opacity-60">Church & Cathedral Conservation</p>
-                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1515701100741-9457866763ad?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Cathedral Interior">
-                    </div>
+            <div class="card-item"><div class="card-inner">
+                <div class="card-content">
+                    <h3 class="display text-3xl font-bold">MODERN CONTEXT</h3>
+                    <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
                 </div>
-
-                <div class="card-item">
-                    <div class="card-inner">
-                        <div class="card-content">
-                            <h3 class="text-4xl font-bold uppercase display">Modern Context</h3>
-                            <p class="text-sm opacity-60">Contemporary Urban Design</p>
-                            <a href="#contact" class="uppercase text-xs border-b border-white/30 pb-2 w-max">Inquire</a>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600" class="card-img" alt="Modern Architecture">
-                    </div>
-                </div>
-            </div>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format" class="card-img" alt="Project 3">
+            </div></div>
         </section>
     </div>
 
     <footer id="contact" class="footer-sticky">
-        <div class="text-center px-6">
-            <a href="mailto:info@peterrawlingsarchitects.co.uk" class="display text-[8vw] leading-none hover:text-gray-400 transition-colors">
-                LET'S TALK
-            </a>
-            <div class="mt-16 text-[10px] text-gray-500 uppercase tracking-widest">
-                © 2026 PETER RAWLINGS ARCHITECTS
-            </div>
-        </div>
+        <a href="mailto:info@peterrawlingsarchitects.co.uk" class="display text-[8vw] hover:text-gray-400">LET'S TALK</a>
     </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        
-        // SMOOTH SCROLLING
         const lenis = new Lenis();
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-
-        // PAGE LOADER
-        const loadTl = gsap.timeline({ onComplete: () => { document.body.style.opacity = 1; initAnimations(); } });
-        loadTl.to('.loader-bar', { width: '100%', duration: 1.5, ease: 'power2.inOut' })
-              .to('.loader', { yPercent: -100, duration: 0.8, ease: 'power4.inOut' });
-
-        function initAnimations() {
-            gsap.from('.hero-text', { yPercent: 100, stagger: 0.2, duration: 1, ease: 'power4.out' });
-            gsap.to('.hero-fade', { opacity: 1, duration: 1, delay: 0.5 });
-            
-            // CARD STACKING EFFECT
-            gsap.utils.toArray('.card-item').forEach((card, i, arr) => {
-                const inner = card.querySelector('.card-inner');
-                if (arr[i+1]) {
-                    gsap.to(inner, {
-                        scale: 0.9,
-                        opacity: 0.3,
-                        scrollTrigger: {
-                            trigger: arr[i+1],
-                            start: "top bottom",
-                            end: "top 10%",
-                            scrub: true
-                        }
-                    });
-                }
-            });
-        }
+        gsap.to('body', { opacity: 1, duration: 1 });
+        gsap.utils.toArray('.card-item').forEach((card, i, arr) => {
+            if (arr[i+1]) {
+                gsap.to(card.querySelector('.card-inner'), {
+                    scale: 0.9, opacity: 0.5,
+                    scrollTrigger: { trigger: arr[i+1], start: "top bottom", end: "top 10%", scrub: true }
+                });
+            }
+        });
     </script>
 </body>
 </html>
