@@ -1,0 +1,415 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PETER RAWLINGS ARCHITECTS | Heritage & Conservation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<style>
+/* --- CORE --- */
+:root {
+--c-bg: #E3E1DC; /* Stone/Concrete */
+--c-dark: #121212;
+--c-accent: #374336; /* Deep Moss */
+--font-display: 'Syncopate', sans-serif;
+--font-body: 'Manrope', sans-serif;
+}
+body {
+background-color: var(--c-bg);
+color: var(--c-dark);
+font-family: var(--font-body);
+margin: 0;
+overflow-x: hidden;
+cursor: auto;
+opacity: 0; /* JS fade in */
+}
+/* --- LAYOUT UTILS --- */
+.wrapper {
+position: relative;
+z-index: 10;
+background-color: var(--c-bg);
+margin-bottom: 100vh;
+box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+}
+/* --- TEXT REVEAL UTILS --- */
+.word-wrap {
+display: inline-block;
+overflow: hidden;
+vertical-align: top;
+padding-bottom: 0.1em;
+}
+.word-inner {
+display: inline-block;
+transform: translateY(110%);
+}
+/* --- PRELOADER --- */
+.loader {
+position: fixed;
+inset: 0;
+background: #000;
+z-index: 10000;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+}
+.loader-text {
+font-family: var(--font-display);
+font-size: 5vw;
+font-weight: 700;
+}
+.loader-bar {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 4px;
+background: #fff;
+width: 0%;
+}
+/* --- CARD STACK SECTION --- */
+.stack-section {
+padding: 10vh 0;
+background: var(--c-dark);
+color: #E3E1DC;
+position: relative;
+}
+.stack-container {
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+position: relative;
+padding-bottom: 10vh;
+}
+.card-item {
+position: sticky;
+top: 10vh; 
+height: 80vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 5vh;
+}
+.card-inner {
+width: 90%;
+height: 100%;
+background: #1a1a1a;
+border: 1px solid rgba(255,255,255,0.1);
+position: relative;
+overflow: hidden;
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+.card-content {
+padding: 4rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background: #1a1a1a;
+z-index: 2;
+}
+.card-img-wrap {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+.card-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 1.5s ease;
+}
+.card-inner:hover .card-img {
+transform: scale(1.1);
+}
+@media (max-width: 768px) {
+.card-inner { grid-template-columns: 1fr; }
+.card-item { top: 5vh; height: 85vh; }
+.card-img-wrap { height: 50%; order: -1; }
+.card-content { padding: 2rem; }
+}
+/* --- FOOTER REVEAL --- */
+.footer-sticky {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+z-index: 1;
+background: #111;
+color: #fff;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.display { font-family: var(--font-display); }
+.noise-overlay {
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 9000;
+opacity: 0.05;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+}
+</style></head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <div class="loader">
+        <div class="loader-text text-center">PETER RAWLINGS</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 mix-blend-difference text-white">
+        <div class="display font-bold text-xl tracking-tighter">PETER RAWLINGS</div>
+        <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest">
+            <a href="#" class="hover:text-gray-300 transition-colors">Portfolio</a>
+            <a href="#" class="hover:text-gray-300 transition-colors">Studio</a>
+            <a href="#" class="hover:text-gray-300 transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">MENU</div>
+    </nav>
+
+    <div class="wrapper">
+        <section class="h-screen relative flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518005020480-10992897362a?q=80&w=3840" class="absolute inset-0 w-full h-full object-cover brightness-75 hero-img" alt="Hero">
+            <div class="relative z-10 text-center text-white mix-blend-difference">
+                <h1 class="display text-[12vw] leading-none hero-text overflow-hidden">
+                    <span class="block translate-y-full">PETER</span>
+                </h1>
+                <h1 class="display text-[12vw] leading-none hero-text overflow-hidden">
+                    <span class="block translate-y-full">RAWLINGS</span>
+                </h1>
+                <p class="mt-8 text-sm uppercase tracking-[0.5em] opacity-0 hero-fade mix-blend-difference">Chartered RIBA Architects</p>
+            </div>
+        </section>
+
+        <section class="py-32 px-6 md:px-20 grid md:grid-cols-2 gap-16 max-w-[1800px] mx-auto bg-[var(--c-bg)]">
+            <div>
+                <h2 class="display text-4xl md:text-5xl leading-tight split-animate">
+                    Preserving <br><span class="text-[var(--c-accent)]">Legacy.</span>
+                </h2>
+            </div>
+            <div class="text-xl font-light leading-relaxed text-gray-700">
+                <p class="mb-8 split-animate">We believe in architecture that respects the past while embracing the future. Our studio specialises in the sensitive conservation of historic landmarks and the creation of timeless modern forms.</p>
+                <div class="h-px w-full bg-black/10 my-8"></div>
+                <div class="flex gap-12 text-sm uppercase tracking-widest split-animate">
+                    <div>RIBA Chartered</div>
+                    <div>Cambridge / London</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stack-section">
+            <div class="text-center mb-20 px-6">
+                <div class="text-xs uppercase tracking-widest mb-4 opacity-50">Selected Portfolio</div>
+                <h2 class="display text-5xl md:text-7xl">HERITAGE WORK</h2>
+            </div>
+
+            <div class="stack-container">
+                
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">01</div>
+                                <h3 class="text-3xl font-bold" style="color: var(--c-accent);">PETER RAWLINGS</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Principal Studio</p>
+                            </div>
+                            <div class="text-gray-400 font-light">
+                                Leading award-winning architectural interventions across the UK's most sensitive historic sites.
+                            </div>
+                            <button class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Practice</button>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600" class="card-img" alt="Practice">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">02</div>
+                                <h3 class="text-3xl font-bold" style="color: var(--c-accent);">KING'S COLLEGE CHAPEL</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Cambridge, UK</p>
+                            </div>
+                            <div class="text-gray-400 font-light">
+                                Strategic restoration and conservation work within one of the world's most iconic gothic interiors.
+                            </div>
+                            <button class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Case Study</button>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a04?q=80&w=1600" class="card-img" alt="King's College">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">03</div>
+                                <h3 class="text-3xl font-bold" style="color: var(--c-accent);">SOMERSET HOUSE</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">London, UK</p>
+                            </div>
+                            <div class="text-gray-400 font-light">
+                                Mastering the balance of modern utility within a Grade I listed neo-classical environment.
+                            </div>
+                            <button class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Case Study</button>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600" class="card-img" alt="Somerset House">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-40 bg-[#E3E1DC] text-center flex flex-col items-center justify-center relative z-10">
+            <h2 class="display text-3xl md:text-5xl mb-8">Building Continuity</h2>
+            <div class="max-w-xl text-gray-600 font-light mb-12 leading-relaxed">
+                Our approach ensures that historic structures remain vibrant and functional for the generations that follow.
+            </div>
+            <div class="h-16 w-px bg-black/20"></div>
+        </section>
+
+    </div> 
+
+    <footer class="footer-sticky">
+        <div class="relative z-10 text-center">
+            <div class="text-xs uppercase tracking-[0.3em] mb-4 text-gray-500">Inquire with the Studio</div>
+            <a href="mailto:info@peterrawlingsarchitects.co.uk" class="display text-[8vw] leading-none hover:text-gray-400 transition-colors">
+                START PROJECT
+            </a>
+            <div class="flex justify-center gap-8 mt-12 text-sm uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-white">LinkedIn</a>
+                <a href="#" class="hover:text-white">RIBA</a>
+            </div>
+            <div class="mt-20 text-[10px] text-gray-700 uppercase">
+                © 2026 PETER RAWLINGS ARCHITECTS
+            </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1518005020480-10992897362a?q=80&w=3840" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none">
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        function splitTextToWords(element) {
+            const text = element.innerText;
+            const words = text.split(' ');
+            element.innerHTML = '';
+            words.forEach(word => {
+                const wordWrap = document.createElement('span');
+                wordWrap.classList.add('word-wrap');
+                wordWrap.innerHTML = `<span class="word-inner">${word}&nbsp;</span>`;
+                element.appendChild(wordWrap);
+            });
+        }
+
+        document.querySelectorAll('.split-animate').forEach(el => {
+            splitTextToWords(el);
+        });
+
+        const loadTl = gsap.timeline({
+            onComplete: () => {
+                document.body.style.opacity = 1;
+                initSite();
+            }
+        });
+
+        loadTl.to('.loader-bar', { width: '100%', duration: 1.5, ease: 'power2.inOut' })
+              .to('.loader-text', { y: -50, opacity: 0, duration: 0.5 })
+              .to('.loader', { yPercent: -100, duration: 1, ease: 'power4.inOut' });
+
+        function initSite() {
+            gsap.to('.hero-text span', { 
+                y: 0, 
+                stagger: 0.1, 
+                duration: 1.5, 
+                ease: 'power4.out' 
+            });
+            gsap.to('.hero-fade', { opacity: 1, duration: 1, delay: 0.5 });
+            
+            gsap.to('.hero-img', {
+                yPercent: 30,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero-img',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
+            const splitElements = document.querySelectorAll('.split-animate');
+            splitElements.forEach(el => {
+                const words = el.querySelectorAll('.word-inner');
+                gsap.to(words, {
+                    y: "0%",
+                    duration: 1,
+                    ease: "power3.out",
+                    stagger: 0.02,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%", 
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            const cards = gsap.utils.toArray('.card-item');
+            
+            cards.forEach((card, i) => {
+                const nextCard = cards[i+1];
+                if (nextCard) {
+                    gsap.to(card.querySelector('.card-inner'), {
+                        scale: 0.9,
+                        opacity: 0.4, 
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: nextCard,
+                            start: "top bottom", 
+                            end: "top 10vh",    
+                            scrub: true
+                        }
+                    });
+                }
+            });
+
+            gsap.from('.footer-sticky > div', {
+                y: 100,
+                opacity: 0.5,
+                scale: 0.9,
+                scrollTrigger: {
+                    trigger: '.footer-sticky',
+                    start: 'top bottom',
+                    end: 'bottom bottom',
+                    scrub: true
+                }
+            });
+        }
+    </script>
+
+</body></html>
