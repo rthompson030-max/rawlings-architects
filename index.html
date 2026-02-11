@@ -24,22 +24,22 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 .loader-bar { position: absolute; bottom: 0; left: 0; height: 4px; background: #fff; width: 0%; }
 .stack-section { padding: 10vh 0; background: var(--c-dark); color: #E3E1DC; position: relative; }
 .stack-container { width: 100%; max-width: 1400px; margin: 0 auto; position: relative; padding-bottom: 10vh; }
-.card-item { position: sticky; top: 10vh; height: 80vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 5vh; }
-.card-inner { width: 90%; height: 100%; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1.2fr; }
+.card-item { position: sticky; top: 12vh; height: 75vh; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15vh; }
+.card-inner { width: 95%; height: 100%; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; border-radius: 4px; }
 .card-content { padding: 4rem; display: flex; flex-direction: column; justify-content: space-between; background: #1a1a1a; z-index: 2; }
 .card-img-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
-.card-img { width: 100%; height: 100%; object-fit: cover; }
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 2s ease; }
 .footer-sticky { position: fixed; bottom: 0; left: 0; width: 100%; height: 100vh; z-index: 1; background: #000; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .display { font-family: var(--font-display); }
 </style></head>
 <body>
 
     <div class="loader">
-        <div class="loader-text">RAWLINGS</div>
+        <div class="loader-text uppercase text-center">RAWLINGS</div>
         <div class="loader-bar"></div>
     </div>
 
-    <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 mix-blend-difference text-white">
+    <nav class="fixed top-0 w-full p-6 md:p-8 flex justify-between items-center z-50 mix-blend-difference text-white">
         <a href="#hero" class="display font-bold text-xl tracking-tighter hover:opacity-50 transition-opacity">PETER RAWLINGS</a>
         <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest">
             <a href="#work" class="hover:text-gray-300 transition-colors">Portfolio</a>
@@ -50,7 +50,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 
     <div class="wrapper">
         <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1518005020480-10992897362a?q=80&w=3840" class="absolute inset-0 w-full h-full object-cover brightness-75 hero-img" alt="Hero">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=3840" class="absolute inset-0 w-full h-full object-cover brightness-[0.4] hero-img" alt="Hero">
             <div class="relative z-10 text-center text-white mix-blend-difference">
                 <h1 class="display text-[8vw] leading-none hero-text overflow-hidden">
                     <span class="block translate-y-full">PETER</span>
@@ -58,7 +58,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                 <h1 class="display text-[8vw] leading-none hero-text overflow-hidden">
                     <span class="block translate-y-full">RAWLINGS</span>
                 </h1>
-                <p class="mt-8 text-sm uppercase tracking-[0.5em] opacity-0 hero-fade">Architectural Excellence</p>
+                <p class="mt-8 text-sm uppercase tracking-[0.5em] opacity-0 hero-fade">Chartered RIBA Architects</p>
             </div>
         </section>
 
@@ -69,44 +69,69 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                 </h2>
             </div>
             <div class="text-xl font-light leading-relaxed text-gray-700">
-                <p class="mb-8 split-animate">Architecture that respects the past while embracing the future. We specialise in the sensitive conservation of historic landmarks.</p>
+                <p class="mb-8 split-animate">Architecture that respects the past while embracing the future. We specialise in the sensitive conservation of historic landmarks and modern heritage interventions.</p>
                 <div class="h-px w-full bg-black/10 my-8"></div>
                 <div class="flex gap-12 text-sm uppercase tracking-widest">
                     <div>RIBA Chartered</div>
-                    <div>Est. 1994</div>
+                    <div>Cambridge / London</div>
                 </div>
             </div>
         </section>
 
         <section id="work" class="stack-section">
+            <div class="text-center mb-24 px-6">
+                <div class="text-xs uppercase tracking-widest mb-4 opacity-50">Studio Portfolio</div>
+                <h2 class="display text-5xl md:text-7xl">SELECTED WORK</h2>
+            </div>
+
             <div class="stack-container">
                 <div class="card-item">
                     <div class="card-inner">
                         <div class="card-content">
                             <div>
                                 <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">01</div>
-                                <h3 class="text-3xl font-bold" style="color: var(--c-accent);">PETER RAWLINGS</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Principal Studio</p>
+                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">King's College</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Cambridge, UK</p>
                             </div>
-                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">Inquire Now</a>
+                            <div class="text-gray-400 font-light italic">Conservation of World-Class Gothic Heritage.</div>
+                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
                         </div>
                         <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600" class="card-img" alt="1">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a04?q=80&w=1600" class="card-img" alt="King's College">
                         </div>
                     </div>
                 </div>
+
                 <div class="card-item">
                     <div class="card-inner">
                         <div class="card-content">
                             <div>
                                 <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">02</div>
-                                <h3 class="text-3xl font-bold" style="color: var(--c-accent);">KING'S COLLEGE</h3>
-                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Cambridge</p>
+                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Somerset House</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">London, UK</p>
                             </div>
-                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">Inquire Now</a>
+                            <div class="text-gray-400 font-light italic">Sensitive Interventions in Neo-Classical Spaces.</div>
+                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
                         </div>
                         <div class="card-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08759df9a04?q=80&w=1600" class="card-img" alt="2">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600" class="card-img" alt="Somerset House">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <div>
+                                <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">03</div>
+                                <h3 class="text-3xl font-bold uppercase" style="color: var(--c-accent);">Master Craftsmen</h3>
+                                <p class="text-sm mt-4 opacity-70 uppercase tracking-widest">Principal Practice</p>
+                            </div>
+                            <div class="text-gray-400 font-light italic">Building the Future of Architectural Conservation.</div>
+                            <a href="#contact" class="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors">View Project</a>
+                        </div>
+                        <div class="card-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1518005020480-10992897362a?q=80&w=1600" class="card-img" alt="Master Craftsmen">
                         </div>
                     </div>
                 </div>
@@ -116,7 +141,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 
     <footer id="contact" class="footer-sticky">
         <div class="relative z-10 text-center px-6">
-            <div class="text-xs uppercase tracking-[0.3em] mb-4 text-gray-400">Have a project?</div>
+            <div class="text-xs uppercase tracking-[0.3em] mb-4 text-gray-400">Inquire with the Studio</div>
             <a href="mailto:info@peterrawlingsarchitects.co.uk" class="display text-[8vw] leading-none hover:text-gray-400 transition-colors">
                 LET'S TALK
             </a>
@@ -124,7 +149,7 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
                 © 2026 PETER RAWLINGS ARCHITECTS
             </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1449156059431-789c13783b32?q=80&w=3000" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1449156059431-789c13783b32?q=80&w=3000" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
     </footer>
 
     <script>
@@ -161,9 +186,10 @@ body { background-color: var(--c-bg); color: var(--c-dark); font-family: var(--f
 
             const cards = gsap.utils.toArray('.card-item');
             cards.forEach((card, i) => {
+                const inner = card.querySelector('.card-inner');
                 const nextCard = cards[i+1];
                 if (nextCard) {
-                    gsap.to(card.querySelector('.card-inner'), { scale: 0.9, opacity: 0.4, scrollTrigger: { trigger: nextCard, start: "top bottom", end: "top 10vh", scrub: true } });
+                    gsap.to(inner, { scale: 0.9, opacity: 0.4, scrollTrigger: { trigger: nextCard, start: "top bottom", end: "top 10vh", scrub: true } });
                 }
             });
         }
